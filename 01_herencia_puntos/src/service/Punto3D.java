@@ -18,5 +18,12 @@ public class Punto3D extends Punto{
 	public void setZ(int z) {
 		this.z = z;
 	}
+
+	@Override
+	public void imprimir() {
+		// TODO Auto-generated method stub
+		super.imprimir();
+		System.out.println(","+z);
+	}
 	
 }
