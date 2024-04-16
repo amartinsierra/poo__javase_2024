@@ -1,5 +1,7 @@
 package service;
 
+import java.util.Objects;
+
 public class Punto3D extends Punto{
 	private int z;
 	public Punto3D(int z) {
@@ -24,6 +26,26 @@ public class Punto3D extends Punto{
 		// TODO Auto-generated method stub
 		super.imprimir();
 		System.out.println(","+z);
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + Objects.hash(z);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Punto3D other = (Punto3D) obj;
+		return z == other.z;
 	}
 	
 }
