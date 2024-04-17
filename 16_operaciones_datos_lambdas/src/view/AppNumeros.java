@@ -4,7 +4,7 @@ import java.util.List;
 
 import service.Condicion;
 import service.OperacionesService;
-class Positivos implements Condicion{
+/*class Positivos implements Condicion{
 	@Override
 	public boolean test(Integer n) {
 		return n>0;
@@ -15,7 +15,7 @@ class Pares implements Condicion{
 	public boolean test(Integer n) {
 		return n%2==0;
 	}
-}
+}*/
 public class AppNumeros {
 
 	public static void main(String[] args) {
@@ -23,8 +23,9 @@ public class AppNumeros {
 		//imprimir, por una lado, la suma de los pares
 		//y por otro la suma de los positivos
 		OperacionesService service=new OperacionesService();
-		System.out.println("Suma positivos: "+service.sumarPorCondicion(numeros, new Positivos()));
-		System.out.println("Suma pares: "+service.sumarPorCondicion(numeros, new Pares()));
+		Condicion cond=(Integer n)->n>0 ;
+		System.out.println("Suma positivos: "+service.sumarPorCondicion(numeros,cond));
+		System.out.println("Suma pares: "+service.sumarPorCondicion(numeros, n->n%2==0));
 	}
 
 }
