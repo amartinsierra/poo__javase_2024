@@ -12,8 +12,10 @@ public class Test {
 		FuncionalesService service=new FuncionalesService();
 		//Realizar una llamada a cada método de service
 
-		service.m1(Set.of(8,4,7),s->s.length());
-		service.m2(()->"hello",a->System.out.println(a));
+		//service.m1(Set.of(8,4,7),s->s.length());
+		service.m1(Set.of(8,4,7),String::length);
+		//service.m2(()->"hello",a->System.out.println(a));
+		service.m2(()->"hello",System.out::println);
 		service.m3((a,b)->a+b,(a,b)->a);
 		service.m4((a,b)->System.out.println(a+b),(a,b)->a.length()>b);
 		service.m5(()->10, List.of("a","b"));
