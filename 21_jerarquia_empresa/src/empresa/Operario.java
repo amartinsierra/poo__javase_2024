@@ -1,9 +1,16 @@
 package empresa;
 
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.temporal.ChronoUnit;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@Setter
+@Getter
 public class Operario extends Empleado {
 
 	private int nivel;
@@ -14,9 +21,7 @@ public class Operario extends Empleado {
 		
 	}
 
-	public int getNivel() {
-		return nivel;
-	}
+	
 
 	public void setNivel(int nivel) {
 		if(nivel<=5&&nivel>=1) {
