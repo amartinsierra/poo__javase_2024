@@ -28,5 +28,14 @@ class TestCuentasService {
 	void testCuentasPorDivisa() {
 		assertEquals(2, service.cuentasPorDivisa("EUR"));
 	}
+	@Test
+	void testCuentasTitular() {
+		assertTrue(service.buscarCuentaPorTitular("Fernando López Gómez").isPresent());
+		assertTrue(service.buscarCuentaPorTitular("Paquito").isEmpty());
+	}
+	@Test
+	void testCuentasAgrupadasPorDivisa() {
+		assertEquals(2, service.cuentasPorDivisa().get("JPY").size());
+	}
 
 }
