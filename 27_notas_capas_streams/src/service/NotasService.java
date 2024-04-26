@@ -2,6 +2,7 @@ package service;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class NotasService {
@@ -15,6 +16,7 @@ public class NotasService {
 				.average()
 				.orElse(0);*/
 		return notas.stream()
+				//.collect(Collectors.averagingDouble(n->n));
 				.collect(Collectors.averagingDouble(n->n));
 	}
 	public double max() {
